@@ -1,0 +1,10 @@
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+
+# Local environment and logs
+.env
+*.log
