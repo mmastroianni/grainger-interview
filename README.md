@@ -64,7 +64,8 @@ Run the tests with `npm test`.
 ## Notes
 
 - **Stack:** the preferred stack is used as is (React, Spring Boot, Postgres). There are no deviations.
-- **Credentials:** `interview`/`interview` is for local use only.
+- **Credentials:** `interview`/`interview` are local-development defaults only. Postgres is published on `127.0.0.1`, so it is not reachable from other machines. Override them with `DB_USER` and `DB_PASSWORD` (compose and the backend read the same variables). The password is only applied when the database volume is first created, so after changing it run `docker compose down -v` first.
+- **No app-level auth:** the API is open by design for this scaffold; authentication would be the first thing to add beyond local use.
 - **Port already in use?** If something else is on 5432, start the database on another port and point the backend at it:
   ```sh
   DB_PORT=5433 docker compose up -d
